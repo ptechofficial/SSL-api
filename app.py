@@ -20,10 +20,10 @@ from flask import Flask, redirect, url_for, request, render_template
 from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
 from keras.models import model_from_json
-json_file = open(r'C:\Users\rishi\deployemotion\depemotion\Deployment-Deep-Learning-Model\models\fer.json', 'r')
+json_file = open(r'./models/fer.json', 'r')
 loaded_model_json = json_file.read()
 model = model_from_json(loaded_model_json)
-model.load_weights(r'C:\Users\rishi\deployemotion\depemotion\Deployment-Deep-Learning-Model\models\fer.h5')
+model.load_weights(r'./models/fer.h5')
 
 # Define a flask app
 app = Flask(__name__)
